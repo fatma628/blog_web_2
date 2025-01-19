@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/test_layaout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>İletişim</title>
+    <!-- Next Level CSS Template -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="~/tema/css/all.min.css" />
+    <link rel="stylesheet" href="~/tema/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/tema/css/templatemo-style.css" />
+</head>
+<body>
+    <div class="row tm-welcome-row">
+        <div class="col-12 tm-page-cols-container">
+            <div class="tm-page-col-left tm-welcome-box tm-bg-gradient">
+                <p class="tm-welcome-text">
+                    <em>
+                        "Zihinsel sağlığınız önceliğimizdir. Sizin için güvenli bir alan sunarak, yaşamın zorluklarıyla başa çıkmanızı destekliyoruz."
+                    </em>
+                </p>
+            </div>
+            <div class="tm-page-col-right">
+                <div class="tm-welcome-parallax"
+                     data-parallax="scroll"
+                     data-image-src='@Url.Content("~/tema/img/contact-us.jpg")'></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="row tm-pt-4 tm-mb-3">
+        <div class="col-12 tm-page-cols-container">
+            <div class="tm-page-col-left">
+                <div class="tm-contact-container tm-mb-6">
+                    <div class="tm-address-container">
+                        <h2 class="tm-text-secondary tm-mb-6">Adres</h2>
+                        <address>
+                            <p>
+                                Kadıköy, Caferağa Mahallesi, Dr. Esat Işık Caddesi No: 23, 34710 Kadıköy/İstanbul
+                            </p>
+                        </address>
+                    </div>
+
+                    <div class="tm-location-container">
+                        <h2 class="tm-text-secondary tm-mb-4">Konum</h2>
+                        <a href="#"><img src='@Url.Content("~/tema/img/map.png")' alt="Map image" class="img-fluid" /></a>
+                    </div>
+                </div>
+            </div>
+            <div class="tm-page-col-right tm-form-container">
+                <h2 class="tm-text-secondary mb-4">Bize Ulaşın</h2>
+                <!-- Formun action'ı Controller'a yönlendirildi -->
+                <form action="/Contact/SaveContact"
+                      method="POST"
+                      id="tm_contact_form"
+                      enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text"
+                               id="contact_adsoyad"
+                               name="contact_adsoyad"
+                               class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                               placeholder="İsim/Soyisim"
+                               required="" />
+                    </div>
+
+                    <div class="form-group-2">
+                        <input type="email"
+                               id="contact_mail"
+                               name="contact_mail"
+                               class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                               placeholder="Email"
+                               required="" />
+                    </div>
+                    <div class="form-group-2">
+                        <input type="tel"
+                               id="contact_tel"
+                               name="contact_tel"
+                               class="form-control rounded-0 border-top-0 border-right-0 border-left-0"
+                               placeholder="Telefon Numarası"
+                               required="" />
+                    </div>
+                    <div class="tm-mb-5">
+                        <textarea rows="10"
+                                  id="contact_konu"
+                                  name="contact_konu"
+                                  class="form-control rounded-0"
+                                  placeholder="Mesaj"
+                                  required=""></textarea>
+                    </div>
+
+                    <div class="tm-mb-6">
+                        <button type="submit"
+                                class="btn btn-secondary tm-btn-submit rounded-0">
+                            Gönder
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/tema/js/jquery.min.js"></script>
+    <script src="~/tema/js/parallax.min.js"></script>
+    <script src="~/tema/js/bootstrap.min.js"></script>
+</body>
+</html>

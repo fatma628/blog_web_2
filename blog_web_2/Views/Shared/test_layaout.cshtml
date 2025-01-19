@@ -1,0 +1,107 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--
+    Next Level CSS Template
+    https://templatemo.com/tm-532-next-level
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="~/tema/css/all.min.css" />
+    <link rel="stylesheet" href="~/tema/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/tema/css/templatemo-style.css" />
+    <style>
+        /* Sayfanın alt köşesinde buton */
+        .admin-login-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .admin-login-btn:hover {
+                background-color: #0056b3;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row tm-brand-row">
+            <div class="col-lg-4 col-10">
+                <div class="tm-brand-container">
+                    <div class="tm-brand-texts">
+                        <h1 class="text-uppercase tm-brand-name">Zeynep KAPLAN</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 col-2 tm-nav-col">
+                <div class="tm-nav">
+                    <nav class="navbar navbar-expand-lg navbar-light tm-navbar">
+                        <button class="navbar-toggler"
+                                type="button"
+                                data-toggle="collapse"
+                                data-target="#navbarNav"
+                                aria-controls="navbarNav"
+                                aria-expanded="false"
+                                aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto mr-0">
+                                <li class="nav-item @(ViewData["ActivePage"] == "Home" ? "active" : "")">
+                                    <div class="tm-nav-link-highlight"></div>
+                                    <a class="nav-link" href="@Url.Action("Index", "Default")">Ana Sayfa</a>
+                                </li>
+                                <li class="nav-item @(ViewData["ActivePage"] == "About" ? "active" : "")">
+                                    <div class="tm-nav-link-highlight"></div>
+                                    <a class="nav-link" href="@Url.Action("About", "Default")">Hakkımda</a>
+                                </li>
+                                <li class="nav-item @(ViewData["ActivePage"] == "Contact" ? "active" : "")">
+                                    <div class="tm-nav-link-highlight"></div>
+                                    <a class="nav-link" href="@Url.Action("Contact", "Default")">İletişim</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="comtent">
+            @RenderBody()
+        </div>
+
+        <!-- Admin Giriş Butonu -->
+        <button class="admin-login-btn" onclick="window.location.href='@Url.Action("Login", "Admin")'">
+            Admin Giriş
+        </button>
+
+        <!-- row -->
+       
+        <!-- Page footer -->
+        <footer class="row tm-page-footer">
+            <p class="col-12 tm-copyright-text mb-0">
+                Designed by Fatma KAPLAN
+ 
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

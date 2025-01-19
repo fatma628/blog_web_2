@@ -1,0 +1,135 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/test_layaout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Hakkımda</title>
+    <!-- Next Level CSS Template -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="~/tema/css/all.min.css" />
+    <link rel="stylesheet" href="~/tema/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/tema/css/templatemo-style.css" />
+</head>
+
+<body>
+    <div class="row tm-welcome-row">
+        <div class="col-12 tm-page-cols-container">
+            <div class="tm-page-col-left tm-welcome-box tm-bg-gradient">
+                <p class="tm-welcome-text">
+                    <em>
+                        İçsel huzuru keşfetmeye, duygusal engelleri aşmaya ve yaşam kalitenizi artırmaya yönelik rehberlik
+                        sunuyoruz. Profesyonel destek ile sağlıklı bir zihin ve beden için adım atın
+                    </em>
+                </p>
+            </div>
+            <div class="tm-page-col-right">
+                <div class="img-fluid tm-mb-4 tm-small-parallax"
+                     data-parallax="scroll" data-image-src="@Url.Content("~/tema/img/pink-contem-girl.jpg")">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="row tm-pt-4 tm-pb-6">
+        <div class="col-12 tm-tabs-container tm-page-cols-container">
+            <div class="tm-page-col-left tm-tab-links">
+                <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+                    <li>
+                        <a href="#tab1" class="active">
+                            <div class="tm-tab-icon"></div>
+                            Hakkında
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#tab2">
+                            <div class="tm-tab-icon"></div>
+                            Sahip Olunan Belgeler
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tm-page-col-right tm-tab-contents">
+                <div id="first-tab-group" class="tabgroup">
+                    <div id="tab1">
+                        <div class="text-content">
+                            <h3 class="tm-text-secondary tm-mb-5">
+                                Hakkında
+                            </h3>
+                            <p class="tm-mb-5">
+                                Eyüboğlu Koleji’ndeki lise eğitiminin ardından İstanbul Bilgi Üniversitesi psikoloji & uluslararası ilişkiler bölümlerinden (çift anadal) mezun oldu.
+
+                                İngiltere’de University of Westminster’da örgütsel psikoloji alanında yüksek lisansını tamamladı. İkinci yüksek lisansını İstanbul Bilgi Üniversitesi Klinik Psikoloji programında yaptı ve programdan ‘çift ve aile terapisti’ olarak mezun oldu.
+
+                                Şu anda kurucu ortağı olduğu Mita Psikoloji'de klinik psikolog olarak hizmet vermektedir.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="tab2">
+                        <div class="text-content">
+                            <h3 class="tm-text-secondary tm-mb-5">Sahip Olunan Belgeler</h3>
+                            <p class="tm-mb-5">
+                                EMDR I. ve II. Düzey Eğitimi – Emre Konuk & Asena Yurtsever.<br>
+
+                                -Çocuk ve Ergenlerle EMDR I. ve II. Düzey Eğitimi - Prof. Dr. Ümran Korkmazlar.<br>
+
+                                -Çocuklarla Oyun Terapisi ve EMDR - Dr. Reyhana Seedat.<br>
+
+                                -EMDR ile Yetişkinlerde Bağlanma Sorunları Üzerine Çalışmak - Asena Yurtsever & Ayşe Bombacı.<br>
+
+                                -EMDR Kum Tepsisi Protokolü Eğitimi - Derya Altınay.<br>
+
+                                -Somatik Deneyimleme Giriş Semineri - Dr. Sonia Gomes.<br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="~/tema/js/jquery.min.js"></script>
+    <script src="~/tema/js/parallax.min.js"></script>
+    <script src="~/tema/js/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            // Tabs
+            $(".tabgroup > div").hide();
+            $(".tabgroup > div:first-of-type").show();
+            $(".tabs a").click(function (e) {
+                e.preventDefault();
+                var $this = $(this),
+                    tabgroup = "#" + $this.parents(".tabs").data("tabgroup"),
+                    others = $this
+                        .closest("li")
+                        .siblings()
+                        .children("a"),
+                    target = $this.attr("href");
+                others.removeClass("active");
+                $this.addClass("active");
+                $(tabgroup)
+                    .children("div")
+                    .hide();
+                $(target).show();
+
+                // Scroll to tab content (for mobile)
+                if ($(window).width() < 992) {
+                    $("html, body").animate(
+                        {
+                            scrollTop: $("#first-tab-group").offset().top
+                        },
+                        200
+                    );
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

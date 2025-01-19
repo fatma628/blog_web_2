@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/test_layaout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ana Sayfa</title>
+    <!--
+    Next Level CSS Template
+    https://templatemo.com/tm-532-next-level
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" />
+    <link rel="stylesheet" href="~/tema/css/all.min.css" />
+    <link rel="stylesheet" href="~/tema/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/tema/css/templatemo-style.css" />
+</head>
+<body>
+   
+
+        <div class="row tm-welcome-row">
+            <div class="col-12 tm-page-cols-container">
+                <div class="tm-page-col-left tm-welcome-box tm-bg-primary">
+                    <p class="tm-welcome-text">
+                        <em>
+                            "Hayatınızın her anında , sizi anlamaya ve destek olmaya hazır bir yol arkadaşıyım."
+                        </em>
+                    </p>
+                </div>
+                <div class="tm-page-col-right">
+                    <div class="tm-welcome-parallax"
+                         data-parallax="scroll"
+                         data-image-src='@Url.Content("~/tema/img/psikolog_1.png")'
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="row tm-pt-4 tm-pb-6">
+            <div class="col-12 tm-page-cols-container">
+                <div class="tm-page-col-right">
+                    <h2 class="tm-text-secondary tm-mb-5">
+                        İç Huzurunuza Giden İlk Adımı Atın
+                    </h2>
+                    <p class="tm-mb-6">
+                         Hayatta bazen yolumuzda engellerle karşılaşabiliriz. Kendinizi ifade etmekte zorlandığınız, duygusal bir yük hissettiğiniz ya da yaşamınızdaki dengeyi yeniden kurmak istediğiniz anlarda, yalnız olmadığınızı bilmelisiniz.
+
+                        Kendi ihtiyaçlarınıza odaklanacağınız bu güvenli alanda, birlikte çözüm yollarını keşfedeceğiz. Her bireyin hikayesi eşsizdir ve sizin hikayenizi derin bir anlayışla dinlemeyi önemsiyorum.
+
+                        Kendinize yatırım yapmaya ve daha dengeli, huzurlu bir yaşam sürmeye hazır mısınız? O halde, sizi yolculuğunuzun ilk adımını atmaya davet ediyorum.
+
+                    </p>
+                   
+                </div>
+            </div>
+        </section>
+
+        <div class="tm-page-col-right">
+            <div class="row tm-pt-7 tm-pb-6">
+                <div class="col-md-6 tm-home-section-2-left">
+                    <div class="img-fluid tm-mb-4 tm-small-parallax"
+                         data-parallax="scroll"
+                         data-image-src=@Url.Content("~/tema/img/image-1.jpg")></div>
+                    <div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="col-md-6 tm-home-section-2-right">
+                    <div class="img-fluid tm-mb-4 tm-small-parallax"
+                         data-parallax="scroll"
+                         data-image-src=@Url.Content("~/tema/img/image-2.jpg")></div>
+                    <div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- row -->
+        <!-- Call to Action -->
+        
+    </div>
+
+    <script src="~/tema/js/jquery.min.js"></script>
+    <script src="~/tema/js/parallax.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
